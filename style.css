@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Very-Light-Gray);
+  overflow-y: hidden;
+}
+
+section .heading {
+  text-align: center;
+}
+
+.heading h1 {
+  color: var(--Very-Dark-Blue);
+  font-size: 30px;
+  font-weight: 300;
+  padding-top: 10px;
+}
+
+.heading h2 {
+  color: var(--Very-Dark-Blue);
+  font-size: 30px;
+}
+
+.heading p {
+  max-width: 500px;
+  margin: 20px auto;
+  color: var(--Grayish-Blue);
+}
+
+.container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  min-height: calc(100vh - 160px);
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.container .row .card {
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 0.1);
+  position: relative;
+  height: 200px;
+}
+
+.container .row:first-child .card {
+  border-top: 4px solid var(--Cyan);
+}
+.container .row:nth-child(2) .card:first-of-type {
+  border-top: 4px solid var(--Red);
+}
+.container .row:nth-child(2) .card:last-of-type {
+  border-top: 4px solid var(--Orange);
+}
+.container .row:last-child .card {
+  border-top: 4px solid var(--Blue);
+}
+
+.container .row:nth-child(2) .card {
+  margin-bottom: 20px;
+}
+
+.container .row .card h3 {
+  color: var(--Very-Dark-Blue);
+  font-size: 20px;
+}
+
+.container .row .card p {
+  color: var(--Grayish-Blue);
+  margin: 10px 0 40px;
+}
+
+.card img {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .heading h1,
+  .heading h2 {
+    font-size: 25px;
+  }
+  .heading p {
+    font-size: 13px;
+  }
+  body {
+    overflow-y: scroll;
+  }
+}
